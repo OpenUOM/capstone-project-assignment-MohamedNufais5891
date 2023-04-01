@@ -6,7 +6,6 @@ fixture`Testing Teacher UI`
 
 test('Testing add teachers', async t => {
     await t.navigateTo("/dbinitialize");
-
     await t.navigateTo("/addTeacher");
     await t.typeText("#teacher-id", "123456");
     await t.typeText("#teacher-name", "Mohan Perera");
