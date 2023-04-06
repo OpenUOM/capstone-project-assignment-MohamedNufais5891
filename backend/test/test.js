@@ -164,8 +164,6 @@ describe("Student Endpoints", () => {
     expect(res.status).toEqual(200);
     let body = res.body;
 
-    
-
     expect(body).toContainEqual({
       "id": 20002,
       "name": "Sandakan",
