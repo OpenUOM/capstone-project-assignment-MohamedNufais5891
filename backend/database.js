@@ -1,7 +1,7 @@
 const dbConnection = require("./sqlite");
 
 dbConnection
-  .getDbConnection()
+.getDbConnection()
   .then((db) => {
     init(db);
   })
