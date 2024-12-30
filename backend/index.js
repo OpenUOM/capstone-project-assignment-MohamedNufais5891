@@ -1,4 +1,4 @@
-import { listen } from "./server.js";
+const { listen } = require('./server.js');
 
 if(process.env.NODE_ENV === "test"){
   listen(3000, () => {
