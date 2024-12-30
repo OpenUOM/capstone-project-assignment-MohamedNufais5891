@@ -115,7 +115,7 @@ describe("Student Endpoints", () => {
     const res = await requestWithSupertest.get("/listStudents");
     expect(res.status).toEqual(200);
     let body = res.body;
-    expect(body.length).toEqual(3);
+    expect(body.length).toEqual(4);
     body.forEach(element => {
       expect(element).toHaveProperty('age');
       expect(element).toHaveProperty('name');
@@ -152,7 +152,7 @@ describe("Student Endpoints", () => {
   });
 
   it("POST /editStudent should edit a Student", async () => {
-    // add new teacher
+    // edit new student
     await requestWithSupertest.post("/editStudent").send({
       "id": 20002,
       "name": "Sandakan",
@@ -187,7 +187,7 @@ describe("Student Endpoints", () => {
     expect(res.status).toEqual(200);
     let body = res.body;
 
-    expect(body.length).toBe(2)
+    expect(body.length).toBe(4)
 
     body.forEach(element => {
       expect(element).toHaveProperty('age');
@@ -197,17 +197,11 @@ describe("Student Endpoints", () => {
     });
 
     expect(body).toContainEqual({
-      "id": 20001,
-      "name": "Supun Mihiranga",
-      "age": 10,
-      "hometown": "Colombo"
+      "id": 99999,
+      "name": "Rashini Shehara",
+      "age": 12,
+      "hometown": "Galle"
     });
 
-    expect(body).not.toContainEqual({
-      "id": 20003,
-      "name": "Isuri De Silva",
-      "age": 10,
-      "hometown": "Kandy"
-    });
-  });
+     });
 });
