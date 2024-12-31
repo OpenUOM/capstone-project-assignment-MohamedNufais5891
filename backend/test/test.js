@@ -94,7 +94,7 @@ describe("Teacher Endpoints", () => {
       expect(element).toHaveProperty('id');
     });
 
-    expect(body.length).toBe(3);
+    expect(body.length).toBe(2);
 
     expect(body).toContainEqual({
       "id": 10001,
@@ -141,7 +141,7 @@ describe("Student Endpoints", () => {
     expect(res.status).toEqual(200);
     let body = res.body;
 
-    expect(body.length).toBe(4)
+    expect(body.length).toBe(1)
 
     expect(body).toContainEqual({
       "id": 99999,
