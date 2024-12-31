@@ -115,17 +115,22 @@ describe("Student Endpoints", () => {
     const res = await requestWithSupertest.get("/listStudents");
     expect(res.status).toEqual(200);
     let body = res.body;
-    expect(body.length).toEqual(1);
     body.forEach(element => {
       expect(element).toHaveProperty('age');
       expect(element).toHaveProperty('name');
       expect(element).toHaveProperty('id');
       expect(element).toHaveProperty('hometown');
     });
+     expect(body.length).toBe(1);
 
-    expect(body[1].name).toBe('Rashini Shehara');
+    expect(body).toContainEqual({
+      "age": 12,
+      "name": "Rashini Shehara",
+      "id": 99999,
+      "hometown":"Galle",
+    });
+
    
-  });
 
   if("POST /addStudent should show a newly added student", async () => {
     // add new student
