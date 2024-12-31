@@ -206,6 +206,4 @@ describe("Student Endpoints", () => {
       "age": 12,
       "hometown": "Galle"
     });
-
-     });
 });
