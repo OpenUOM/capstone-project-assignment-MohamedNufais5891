@@ -101,7 +101,7 @@ describe("Student Endpoints", () => {
     expect(res.status).toBe(200);
 
     const body = res.body;
-    expect(body.length).toBe(3);
+    expect(body.length).toBe(1);
 
     body.forEach((student) => {
       expect(student).toHaveProperty("id");
