@@ -12,7 +12,7 @@ test('Testing add students', async t => {
     await t.typeText("#student-Hometown", "Catholic");
     await t.click("#student-add");
 
-    await t.navigateTo("/Studenst");
+    await t.navigateTo("/Students");
 
     const table = Selector('#student-table')
     const rowCount = await table.find('tr').count;
