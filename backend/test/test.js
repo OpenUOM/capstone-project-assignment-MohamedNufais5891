@@ -132,7 +132,7 @@ describe("Student Endpoints", () => {
     // add new student
     await requestWithSupertest.post("/addStudent").send({
       "id": 99999,
-      "name": "Rashini Shehara",
+      "name": "Supun Mihiranga",
       "age": 12,
       "hometown": "Galle"
     });
