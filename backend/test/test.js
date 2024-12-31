@@ -123,7 +123,7 @@ describe("Student Endpoints", () => {
       expect(element).toHaveProperty('hometown');
     });
 
-    expect(body[0].name).toBe('Supun Mihiranga');
+    expect(body[0].name).toBe('Rashini shehara');
     expect(body[1].name).toBe('Sandun Perera');
     expect(body[2].name).toBe('Isuri De Silva');
   });
