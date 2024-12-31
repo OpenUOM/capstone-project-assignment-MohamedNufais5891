@@ -110,7 +110,7 @@ describe("Student Endpoints", () => {
       expect(student).toHaveProperty("hometown");
     });
 
-    expect(body[0].name).toBe("Sadun Perera");
+    expect(body[0].name).toBe("Rashini Shehara");
     expect(body[1].name).toBe("Sandun Perera");
     expect(body[2].name).toBe("Isuri De Silva");
   });
