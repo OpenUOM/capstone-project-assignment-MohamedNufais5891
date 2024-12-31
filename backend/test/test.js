@@ -123,7 +123,7 @@ describe("Student Endpoints", () => {
       expect(element).toHaveProperty('hometown');
     });
 
-    expect(body[0].name).toBe('Supun Mihiranga');
+    expect(body[0].name).toBe('Rashini Shehara');
     expect(body[1].name).toBe('Sandun Perera');
     expect(body[2].name).toBe('Isuri De Silva');
   });
@@ -132,7 +132,7 @@ describe("Student Endpoints", () => {
     // add new student
     await requestWithSupertest.post("/addStudent").send({
       "id": 99999,
-      "name": "Supun Mihiranga",
+      "name": "Rashini Shehara",
       "age": 12,
       "hometown": "Galle"
     });
