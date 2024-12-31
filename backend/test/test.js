@@ -45,7 +45,7 @@ describe("Teacher Endpoints", () => {
     expect(res.status).toEqual(200);
     let body = res.body;
 
-    expect(body.length).toBe(3)
+    expect(body.length).toBe(4)
 
     expect(body).toContainEqual({
       "id": 10033,
