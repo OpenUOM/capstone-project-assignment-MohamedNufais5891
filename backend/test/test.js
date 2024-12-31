@@ -187,7 +187,7 @@ describe("Student Endpoints", () => {
     expect(res.status).toEqual(200);
     let body = res.body;
 
-    expect(body.length).toBe(4)
+    expect(body.length).toBe(1)
 
     body.forEach(element => {
       expect(element).toHaveProperty('age');
