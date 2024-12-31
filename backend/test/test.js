@@ -21,7 +21,7 @@ describe("Teacher Endpoints", () => {
     const res = await requestWithSupertest.get("/listTeachers");
     expect(res.status).toEqual(200);
     let body = res.body;
-    expect(body.length).toBe(3);
+    expect(body.length).toEqual(3);
     body.forEach(element => {
       expect(element).toHaveProperty('age');
       expect(element).toHaveProperty('name');
@@ -54,7 +54,7 @@ describe("Teacher Endpoints", () => {
     });
   });
 
-  it("POST /editTeacher should show a newly added teacher", async () => {
+  if("POST /editTeacher should show a newly added teacher", async () => {
     // add new teacher
     await requestWithSupertest.post("/editTeacher").send({
       "id": 10002,
@@ -115,22 +115,18 @@ describe("Student Endpoints", () => {
     const res = await requestWithSupertest.get("/listStudents");
     expect(res.status).toEqual(200);
     let body = res.body;
+    expect(body.length).toBe(1);
     body.forEach(element => {
       expect(element).toHaveProperty('age');
       expect(element).toHaveProperty('name');
       expect(element).toHaveProperty('id');
       expect(element).toHaveProperty('hometown');
     });
-     expect(body.length).toBe(1);
 
-    expect(body).toContainEqual({
-      "age": 12,
-      "name": "Rashini Shehara",
-      "id": 99999,
-      "hometown":"Galle",
-    });
-
-   
+    expect(body[0].name).toBe('Supun Mihiranga');
+    expect(body[1].name).toBe('Sandun Perera');
+    expect(body[2].name).toBe('Isuri De Silva');
+  });
 
   if("POST /addStudent should show a newly added student", async () => {
     // add new student
@@ -145,7 +141,7 @@ describe("Student Endpoints", () => {
     expect(res.status).toEqual(200);
     let body = res.body;
 
-    expect(body.length).toBe(1)
+    expect(body.length).toBe(4)
 
     expect(body).toContainEqual({
       "id": 99999,
@@ -155,13 +151,13 @@ describe("Student Endpoints", () => {
     });
   });
 
-  if("POST /editStudent should edit a Student", async () => {
+  it("POST /editStudent should edit a Student", async () => {
     // edit new student
     await requestWithSupertest.post("/editStudent").send({
-      "id": 99999,
-      "name": "Rashini Shehara",
-      "age": 12,
-      "hometown": "Galle"
+      "id": 20002,
+      "name": "Sandakan",
+      "age": 15,
+      "hometown": "Homagama"
     });
 
     const res = await requestWithSupertest.get("/listStudents");
@@ -180,7 +176,7 @@ describe("Student Endpoints", () => {
     });
   });
 
-  if("POST /deleteStudent should delete a student", async () => {
+  it("POST /deleteStudent should delete a student", async () => {
 
     // delete Student
     await requestWithSupertest.post("/deleteStudent").send({
@@ -206,4 +202,8 @@ describe("Student Endpoints", () => {
       "age": 12,
       "hometown": "Galle"
     });
+
+    
+    
+  });
 });
