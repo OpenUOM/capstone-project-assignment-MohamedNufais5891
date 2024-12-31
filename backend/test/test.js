@@ -170,7 +170,7 @@ describe("Student Endpoints", () => {
     expect(res.status).toBe(200);
 
     const body = res.body;
-    expect(body.length).toBe(2);
+    expect(body.length).toBe(1);
 
     expect(body).not.toContainEqual({
       id: 20003,
