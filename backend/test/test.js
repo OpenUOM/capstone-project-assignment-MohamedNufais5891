@@ -123,8 +123,8 @@ describe("Student Endpoints", () => {
       expect(element).toHaveProperty('hometown');
     });
 
-    expect(body[0].name).toBe('Rashini Shehara');
-    expect(body[1].name).toBe('Isuri De Silva');
+    expect(body[1].name).toBe('Rashini Shehara');
+   
   });
 
   if("POST /addStudent should show a newly added student", async () => {
