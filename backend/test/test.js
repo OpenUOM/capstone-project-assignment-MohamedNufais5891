@@ -139,10 +139,10 @@ describe("Student Endpoints", () => {
 
   it("POST /editStudent should edit a student", async () => {
     await requestWithSupertest.post("/editStudent").send({
-      id: 20002,
-      name: "Sandakan",
-      age: 15,
-      hometown: "Homagama",
+      id: 99999,
+      name: "Rashini Shehara",
+      age: 12,
+      hometown: "Galle",
     });
 
     const res = await requestWithSupertest.get("/listStudents");
@@ -150,10 +150,10 @@ describe("Student Endpoints", () => {
 
     const body = res.body;
     expect(body).toContainEqual({
-      id: 20002,
-      name: "Sandakan",
-      age: 15,
-      hometown: "Homagama",
+      id: 99999,
+      name: "Rashini Shehara",
+      age: 12,
+      hometown: "Galle", 
     });
 
     expect(body).not.toContainEqual({
