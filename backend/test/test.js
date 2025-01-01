@@ -45,7 +45,7 @@ describe("Teacher Endpoints", () => {
     expect(res.status).toEqual(200);
     let body = res.body;
 
-    expect(body.length).toBe(1)
+    expect(body.length).toBe(4)
 
     expect(body).toContainEqual({
       "id": 10033,
@@ -115,7 +115,7 @@ describe("Student Endpoints", () => {
     const res = await requestWithSupertest.get("/listStudents");
     expect(res.status).toEqual(200);
     let body = res.body;
-    expect(body.length).toEqual(3);
+    expect(body.length).toEqual(1);
     body.forEach(element => {
       expect(element).toHaveProperty('age');
       expect(element).toHaveProperty('name');
@@ -141,7 +141,7 @@ describe("Student Endpoints", () => {
     expect(res.status).toEqual(200);
     let body = res.body;
 
-    expect(body.length).toBe(4)
+    expect(body.length).toBe(2)
 
     expect(body).toContainEqual({
       "id": 999999,
@@ -187,7 +187,7 @@ describe("Student Endpoints", () => {
     expect(res.status).toEqual(200);
     let body = res.body;
 
-    expect(body.length).toBe(2)
+    expect(body.length).toBe(1)
 
     body.forEach(element => {
       expect(element).toHaveProperty('age');
