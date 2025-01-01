@@ -5,7 +5,7 @@ fixture`Testing Teacher UI`
     .page`http://localhost:4401/`
 
 test('Testing search Teachers', async t => {
-    await t.navigateTo("/dbinitialize");
+    await t.navigateTo("/");
     await t.typeText("#teacher-search", "su");
 
     const table = Selector('#teacher-table')
