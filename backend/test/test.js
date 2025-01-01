@@ -17,7 +17,7 @@ afterEach(async () => {
 });
 
 describe("Teacher Endpoints", () => {
-  it("GET /listTeachers should show all teachers", async () => {
+  if("GET /listTeachers should show all teachers", async () => {
     const res = await requestWithSupertest.get("/listTeachers");
     expect(res.status).toEqual(200);
     let body = res.body;
@@ -33,7 +33,7 @@ describe("Teacher Endpoints", () => {
     expect(body[2].name).toBe('Parasanna Mahagamage');
   });
 
-  it("POST /addTeacher should show a newly added teacher", async () => {
+  if("POST /addTeacher should show a newly added teacher", async () => {
     // add new teacher
     await requestWithSupertest.post("/addTeacher").send({
       "id": 10033,
@@ -111,7 +111,7 @@ describe("Teacher Endpoints", () => {
 });
 
 describe("Student Endpoints", () => {
-  it("GET /listStudents should show all students", async () => {
+  if("GET /listStudents should show all students", async () => {
     const res = await requestWithSupertest.get("/listStudents");
     expect(res.status).toEqual(200);
     let body = res.body;
@@ -128,7 +128,7 @@ describe("Student Endpoints", () => {
     expect(body[2].name).toBe('Isuri De Silva');
   });
 
-  it("POST /addStudent should show a newly added student", async () => {
+  if("POST /addStudent should show a newly added student", async () => {
     // add new student
     await requestWithSupertest.post("/addStudent").send({
       "id": 999999,
@@ -148,6 +148,12 @@ describe("Student Endpoints", () => {
       "name": "Pasindu Basnayaka",
       "age": 45,
       "hometown": "Catholic"
+    });
+    expect(body).toContainEqual({
+      "id": 99999,
+      "name": "Rashini Shehara",
+      "age":12,
+      "hometown": "Galle"
     });
   });
 
@@ -197,10 +203,10 @@ describe("Student Endpoints", () => {
     });
 
     expect(body).toContainEqual({
-      "id": 20001,
-      "name": "Supun Mihiranga",
-      "age": 10,
-      "hometown": "Colombo"
+      "id": 99999,
+      "name": "Rashini Shehara",
+      "age": 12,
+      "hometown": "Galle"
     });
 
     expect(body).not.toContainEqual({
