@@ -6,22 +6,24 @@ fixture`Testing Student UI`
     .page`http://localhost:4401/student`;
 
 test('Testing add students', async t => {
-    // Navigate to database initialization page
+    // Navigate to database initialization page to prepare the environment
     await t.navigateTo("/dbinitialize");
 
     // Input student details
     await t.typeText("#student-id", "999999");
     await t.typeText("#student-name", "Pasindu Basnayaka");
     await t.typeText("#student-age", "45");
-    await t.typeText("#student-hometown", "Catholic");
+    await t.typeText("#student-Hometown", "Catholic");
     await t.click("#student-add");
 
-    // Navigate back to ensure the database reflects changes
+    // Navigate back to the student page to verify the table
     await t.navigateTo("/student");
 
-    // Verify the new student entry in the table
+    // Select the student table
     const table = Selector('#student-table');
     const rowCount = await table.find('tr').count;
+
+    // Get the last row's text and validate it
     const lastRowText = await table.find('tr').nth(rowCount - 1).innerText;
 
     // Assert that the last row contains the newly added student's details
@@ -30,3 +32,4 @@ test('Testing add students', async t => {
     await t.expect(lastRowText).contains("45");
     await t.expect(lastRowText).contains("Catholic");
 });
+
